@@ -10,10 +10,3 @@ Array.prototype.next = function () {
     }
     return this[this.index]; // Возвращаем текущий элемент
 };
-function EasyRegex(str, letter, list) {
-    const escapedLetter = letter.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'); // Экранируем специальные символы
-    const regex = new RegExp(escapedLetter, 'g');
-    const replacement = `[${list.join('')}]`; // Создаем шаблон с символами из списка
-    return new RegExp(str.replace(regex, replacement));
-}
-
